@@ -1,0 +1,18 @@
+<h2>Signup</h2>
+
+
+FirstName : <input type="text" name="firstName" [(ngModel)]="firstName" /> <Br>
+
+Email : <input type="text" name="email"  [(ngModel)]="email" /> <Br>
+
+Passsword : <input type="text" name="password"  [(ngModel)]="password"  /> <Br>
+
+   <button type="button" (click)="printInfo()">Signup</button> 
+
+   <br>
+
+   <div *ngIf="isVisible" >  
+   FirstName : {{firstName}}<br>
+   Email : {{email}} <br>
+   Password : {{password}} <br> 
+   </div>
