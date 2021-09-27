@@ -29,7 +29,8 @@ export class SignupComponent implements OnInit {
 
   printInfo() {
     //save 
-    let user = { firstName: this.firstName, email: this.email, password: this.password }
+    let userId  = parseInt ( (Math.random()*10000)+"" ) ; // 01234.56789
+    let user = {userId:userId,firstName: this.firstName, email: this.email, password: this.password }
     this.userApiService.users.push(user);
     
     console.log(this.firstName);

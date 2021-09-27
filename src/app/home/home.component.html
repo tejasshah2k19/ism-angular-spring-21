@@ -1,0 +1,27 @@
+<h2>Welcome</h2>
+
+
+<table class="table table-dashed">
+
+    <thead>
+        <tr>
+            <td>UserId</td>
+            <td>FirstName</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let user of users">
+            <td>{{user.userId}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td><button (click)="editUser(user.userId)"  >Edit</button> | <button (click)="deleteUser(user.userId)">Delete</button> </td>
+        </tr>
+
+    </tbody>
+</table>
