@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { HttpClientModule }  from "@angular/common/http";
+import { ApiSignupComponent } from './api-signup/api-signup.component';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
@@ -19,14 +22,18 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     SignupComponent,
     AddComponent,
     HomeComponent,
-    EditUserComponent
+    EditUserComponent,
+    ApiSignupComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot(),
+    HttpClientModule
+     
     
   ],
   providers: [],
