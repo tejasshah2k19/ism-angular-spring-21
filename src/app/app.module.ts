@@ -13,7 +13,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HttpClientModule }  from "@angular/common/http";
 import { ApiSignupComponent } from './api-signup/api-signup.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { ApiLoginComponent } from './api-login/api-login.component';
+import { ApiHomeComponent } from './api-home/api-home.component';
+import { ApiEditUserComponent } from './api-edit-user/api-edit-user.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HeaderComponent } from './header/header.component'
     HomeComponent,
     EditUserComponent,
     ApiSignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    ApiLoginComponent,
+    ApiHomeComponent,
+    ApiEditUserComponent
   ],
   imports: [
     BrowserModule,
