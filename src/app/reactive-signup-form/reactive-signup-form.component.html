@@ -1,0 +1,28 @@
+<h3>Reactive Signupe</h3>
+<form [formGroup]="myForm" (ngSubmit)="saveUser()">
+    FirstName : <input type="text" formControlName="firstName" />
+
+    <span style="color: red;" *ngIf="myForm.get('firstName')?.touched && myForm.get('firstName')?.valid == false">
+        Please Enter FirstName
+    </span>
+
+    <br>
+    Eamil : <input type="text" formControlName="email" />
+    <span style="color: red;" *ngIf="myForm.get('email')?.touched && myForm.get('email')?.valid == false">
+       
+        <span *ngIf="myForm.get('email')?.hasError('required')  ">
+            Please Enter Email
+        </span>
+
+        <span *ngIf="myForm.get('email')?.hasError('email')  ">
+            Please Enter Valid Email
+        </span>
+    </span>
+
+
+    <br>
+    Password : <input type="text" formControlName="password" /><br>
+    ConfirmPassword : <input type="text" formControlName="confirm_password" /><br>
+    <input type="submit" value="submit" [disabled]="myForm.valid == false">
+
+</form>

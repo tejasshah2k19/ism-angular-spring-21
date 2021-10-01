@@ -1,7 +1,7 @@
 <h3>All Users</h3>
 
 
-<table class="table table-dashed">
+<table *ngIf="users" class="table table-dashed">
     <thead>
         <tr>
             <td>UserId</td>
@@ -10,17 +10,16 @@
             <td>Action</td>
         </tr>
     </thead>
-
     <tbody>
         <tr *ngFor="let user of users">
             <td>{{user.userId}}</td>
-            <td>{{user.firstName}}</td>
+            <td>{{user.firstName | uppercase }}</td>
             <td>{{user.email}}</td>
-            <td>View | <a routerLink="/edituser2/{{user.userId}}"> Edit</a> | <button (click)="deleteUser(user.userId)">Delete</button>
+            <td>
             </td>
-
+            <td>View | <a routerLink="/edituser2/{{user.userId}}"> Edit</a> | <button
+                    (click)="deleteUser(user.userId)">Delete</button>
+            </td>
         </tr>
-
     </tbody>
-
 </table>

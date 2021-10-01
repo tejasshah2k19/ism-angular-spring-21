@@ -8,6 +8,7 @@ import { ApiSignupComponent } from './api-signup/api-signup.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveSignupFormComponent } from './reactive-signup-form/reactive-signup-form.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: "signup2", component: ApiSignupComponent },
   { path: "login2", component: ApiLoginComponent },
   { path: "home2", component: ApiHomeComponent },
-  { path: "edituser2/:userId", component: ApiEditUserComponent }
+  { path: "edituser2/:userId", component: ApiEditUserComponent },
+  { path: "reactive-signup",component:ReactiveSignupFormComponent}
 
 ];
 

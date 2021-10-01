@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,8 @@ import { ApiSignupComponent } from './api-signup/api-signup.component';
 import { HeaderComponent } from './header/header.component';
 import { ApiLoginComponent } from './api-login/api-login.component';
 import { ApiHomeComponent } from './api-home/api-home.component';
-import { ApiEditUserComponent } from './api-edit-user/api-edit-user.component'
+import { ApiEditUserComponent } from './api-edit-user/api-edit-user.component';
+import { ReactiveSignupFormComponent } from './reactive-signup-form/reactive-signup-form.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ApiEditUserComponent } from './api-edit-user/api-edit-user.component'
     HeaderComponent,
     ApiLoginComponent,
     ApiHomeComponent,
-    ApiEditUserComponent
+    ApiEditUserComponent,
+    ReactiveSignupFormComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ApiEditUserComponent } from './api-edit-user/api-edit-user.component'
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
      
     
   ],

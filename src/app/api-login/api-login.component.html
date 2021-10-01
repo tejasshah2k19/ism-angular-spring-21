@@ -1,12 +1,36 @@
-<h2>Login</h2>
+<h2>{{title | uppercase }}</h2>
 
 
-Email : <input type="text" name="email"  [(ngModel)]="email" /> <Br>
+Email : <input type="text" name="email" [(ngModel)]="email" /> <Br>
 
-Passsword : <input type="text" name="password"  [(ngModel)]="password"  /> <Br>
+Passsword : <input type="text" name="password" [(ngModel)]="password" /> <Br>
 
-   <button type="button" (click)="authenticate()">Login</button> 
+<button type="button" (click)="authenticate()">Login</button>
 
-   <br>
+<br>
 
-   {{msg}}
+{{msg}}
+
+
+<br>
+{{num}}
+
+<br>
+{{num | number: '1.0-0' }}
+
+<br>
+{{num | number: '1.0-3' }}
+<br>
+{{num | number: '1.2-3' }}
+<br>
+{{num | number: '1.3-3' }}
+<br>
+{{num | currency  }}
+<br>
+{{num | currency: 'INR'   }}
+
+<br>
+{{num | percent}}
+
+<br>
+{{num2 | number: '4.1-5': 'en'}}

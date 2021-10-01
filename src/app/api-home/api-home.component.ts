@@ -17,8 +17,8 @@ export class ApiHomeComponent implements OnInit {
   }
 
 
-  loadAllUsers() {
-    this.customerApi.getAllUsers().subscribe(resp => {
+  async loadAllUsers() {
+    await this.customerApi.getAllUsers().then(resp => {
       console.log(resp);
       if (resp.data.length == 0) {
         //no content 
@@ -28,6 +28,9 @@ export class ApiHomeComponent implements OnInit {
     }, err => {
 
     })
+
+    console.log("ssssss");
+    
   }
 
 

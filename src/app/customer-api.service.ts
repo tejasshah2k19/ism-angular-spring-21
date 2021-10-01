@@ -17,14 +17,17 @@ export class CustomerApiService {
 
 
   addUser(user: any): Observable<any> {
-    return this.httpClient.post(environment.apiUrl+"saveuser", user)
+   let authToken =  localStorage.getItem("authToken")
+   console.log(authToken);
+    
+   return this.httpClient.post(environment.apiUrl+"saveuser", user)
   }
 
   authenticate(user:any):Observable<any>{
     return this.httpClient.post("http://localhost:9999/authenticate",user)
   }
-  getAllUsers():Observable<any> {
-    return this.httpClient.get(environment.apiUrl+"users")
+  getAllUsers():Promise<any> {
+    return this.httpClient.get(environment.apiUrl+"users").toPromise()
   }
 
   deleteUser(userId:number):Observable<any> {

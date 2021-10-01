@@ -10,11 +10,14 @@ import { CustomerApiService } from '../customer-api.service';
 })
 export class ApiLoginComponent implements OnInit {
 
-  constructor(private customerApi: CustomerApiService,private ts:ToastrService,private router:Router) { }
+  constructor(private customerApi: CustomerApiService, private ts: ToastrService, private router: Router) { }
 
+  title = "login"
   email: string = ""
   password: string = ""
   msg: string = ""
+  num = 12345.12
+  num2 = 1.1234567
   ngOnInit(): void {
   }
 
@@ -23,17 +26,19 @@ export class ApiLoginComponent implements OnInit {
     this.customerApi.authenticate(user).subscribe(resp => {
       //  console.log(resp);
       if (resp.status == 200) {
-        this.ts.success(resp.msg,"success",{timeOut:3000})
-        if(resp.data.roleId == 2){
-            //user  
-            this.router.navigateByUrl("/home2")
+        this.ts.success(resp.msg, "success", { timeOut: 3000 })
+        if (resp.data.roleId == 2) {
+          //user  
+          localStorage.setItem("authToken", resp.data.authToken)
+          sessionStorage.setItem("authToken", resp.data.authToken)
+          this.router.navigateByUrl("/home2")
 
-        }else if(resp.data.roleId == 1){
+        } else if (resp.data.roleId == 1) {
           //admin 
         }
 
       } else {
-        this.ts.error(resp.msg,"ERROR",{timeOut:3000})
+        this.ts.error(resp.msg, "ERROR", { timeOut: 3000 })
       }
     }, err => {
 
