@@ -45,6 +45,33 @@ module.exports.deleteUserById = function deleteUserById(req, res) {
             }
         }
     })
-
 }
 
+module.exports.getUserById = function getUserById(req,res){
+    //   let userId = req.params.userId 
+    User.find({_id:req.params.userId},function(err,data){
+        if(err){
+            res.json({ status: -1, msg: "Something Went Wrong", data: err })
+        }else{
+            res.json({ status: 200, msg: "User Retr...", data: data }) 
+        }
+    })
+}
+
+module.exports.updateUser = function updateUser(req,res){
+    User.updateOne({_id:req.body.userId},
+        {
+            $set:{
+                    firstName:req.body.firstName,
+                    email:req.body.email 
+                }
+        },
+        function(err,data){
+            if(err){
+                res.json({ status: -1, msg: "Something Went Wrong", data: err })
+            }else{
+                res.json({ status: 200, msg: "User modified", data: data }) 
+            }   
+        }
+    )
+}

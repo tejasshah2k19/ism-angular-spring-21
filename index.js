@@ -27,6 +27,8 @@ app.post("/signup",userController.signup)
 app.get("/users",userController.getAllUsers)
 
 app.delete("/users/:userId",userController.deleteUserById)
+app.get("/users/:userId",userController.getUserById)
+app.put("/users",userController.updateUser)
 
 mongoose.connect("mongodb://localhost:27017/ism21",function(err,resp){
     if(err){
