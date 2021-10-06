@@ -22,8 +22,11 @@ app.get("/login", function (req, res) {
 app.post("/products",productController.saveProduct)
 app.get("/products",productController.getAllProducts)
 app.get("/product/:productId",productController.getProduct)
+
 app.post("/signup",userController.signup)
 app.get("/users",userController.getAllUsers)
+
+app.delete("/users/:userId",userController.deleteUserById)
 
 mongoose.connect("mongodb://localhost:27017/ism21",function(err,resp){
     if(err){
