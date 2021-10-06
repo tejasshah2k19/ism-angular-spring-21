@@ -1,4 +1,4 @@
-const monggose = require("mongoose")
+const mongoose = require("mongoose")
 const Schema = require("mongoose").Schema
 
 
@@ -17,9 +17,14 @@ var userSchema = new Schema({
         type:String,
         required:true,
         max:20
+    },
+    role:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Role"
     }
+
       
 })
 
-module.exports = monggose.model("User",userSchema)
+module.exports = mongoose.model("User",userSchema)
 

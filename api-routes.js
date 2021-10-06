@@ -1,6 +1,7 @@
 var router = require("express").Router()
 const productController = require("./controller/productController")
 const userController  = require("./controller/userController")
+const roleController = require("./controller/roleController")
 
 
 
@@ -25,4 +26,5 @@ router.route("/users/:userId").delete(userController.deleteUserById)
 router.route("/users/:userId").get(userController.getUserById)
 router.route("/user").put(userController.updateUser)
 
+router.route("/roles").post(roleController.addRole)
 module.exports = router 

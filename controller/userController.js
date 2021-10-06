@@ -1,7 +1,7 @@
 const User = require("../model/userModel")
 
 module.exports.getAllUsers = function getAllUsers(request, response) {
-    User.find(function (err, data) {
+    User.find().populate("role").exec(function (err, data) {
         if (err) {
             response.send({ msg: "SME", status: -1, data: err })
         } else {
@@ -17,7 +17,8 @@ module.exports.signup = function signup(req, res) {
     var user = new User({
         firstName: req.body.firstName,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        role : req.body.role
     })
 
     user.save(function (err, data) {
