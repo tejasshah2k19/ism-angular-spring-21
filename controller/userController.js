@@ -1,5 +1,16 @@
 const User = require("../model/userModel")
 
+module.exports.getAllUsers = function getAllUsers(request,response){
+    User.find(function(err,data){
+        if(err){
+            response.send({msg:"SME",status:-1,data:err})
+        }else{
+            
+            response.send({msg:"user ret...",status:200,data:data})
+        }
+    })
+
+}
 
 module.exports.signup = function signup(req,res){
 
